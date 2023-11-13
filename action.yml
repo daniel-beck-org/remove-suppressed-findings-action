@@ -4,7 +4,7 @@ inputs:
   sarif_file:
     description: path to the unfiltered SARIF file or directory containing one or more
     required: false
-    default: '../output'
+    default: '../results'
 runs:
   using: "composite"
   steps:
