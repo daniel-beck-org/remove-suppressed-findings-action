@@ -1,12 +1,12 @@
 name: Remove Suppressed SARIF Findings
 description: This action removes findings from the SARIF file that have suppressions applied.
 inputs:
-  input-file:
-    description: path to the unfiltered SARIF file
+  sarif_file:
+    description: path to the unfiltered SARIF file or directory containing one or more
     required: false
     default: '../output'
 runs:
   using: "composite"
   steps:
-    - run: ${{ github.action_path }}/remove-suppressed-findings.sh "${{ inputs.input-file }}" "${{ inputs.output-file }}"
+    - run: ${{ github.action_path }}/remove-suppressed-findings.sh "${{ inputs.sarif_file }}"
       shell: bash
